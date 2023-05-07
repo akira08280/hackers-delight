@@ -8,17 +8,17 @@ func main() {
   var x2 uint32 = 167        // 10100111
   var x3 uint32 = 3113827056 // 10111001100110010011101011110000
 
-  fmt.Printf("%08b -> %08b\n", x1, offTheRightMostBit(x1))
-  fmt.Printf("%08b -> %08b\n", x1, detachTheRightMost1Bit(x1))
-  fmt.Printf("%08b -> %08b\n", x2, detachTheRightMostZeroBit(x2))
-  fmt.Printf("%08b -> %08b\n", x1, maskTrailingZero1(x1))
-  fmt.Printf("%08b -> %08b\n", x1, maskTrailingZero2(x1))
-  fmt.Printf("%08b -> %08b\n", x1, maskTrailingZero3(x1))
-  fmt.Printf("%08b -> %08b\n", x1, maskTrailingZeroInclude1(x1))
-  fmt.Printf("%08b -> %08b\n", x1, offTheRightMostBits(x1))
-  fmt.Printf("%08b -> %08b\n", x2, onTheRightMostBit(x2))
-  fmt.Printf("%08b\n", testDiffPowerOf2())
-  fmt.Printf("%32b -> %32b\n", x3, snoob(x3))
+  fmt.Printf("%032b -> %032b\n", x1, offTheRightMostBit(x1))
+  fmt.Printf("%032b -> %032b\n", x1, detachTheRightMost1Bit(x1))
+  fmt.Printf("%032b -> %032b\n", x2, detachTheRightMostZeroBit(x2))
+  fmt.Printf("%032b -> %032b\n", x1, maskTrailingZero1(x1))
+  fmt.Printf("%032b -> %032b\n", x1, maskTrailingZero2(x1))
+  fmt.Printf("%032b -> %032b\n", x1, maskTrailingZero3(x1))
+  fmt.Printf("%032b -> %032b\n", x1, maskTrailingZeroInclude1(x1))
+  fmt.Printf("%032b -> %032b\n", x1, offTheRightMostBits(x1))
+  fmt.Printf("%032b -> %032b\n", x2, onTheRightMostBit(x2))
+  fmt.Printf("%032b\n", testDiffPowerOf2())
+  fmt.Printf("%032b -> %032b\n", x3, snoob(x3))
 }
 
 // x & (x - 1)
