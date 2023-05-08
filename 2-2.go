@@ -4,36 +4,75 @@ import "fmt"
 
 func main() {
 
-  var x uint32 = 874986927
-  var y uint32 = 384732832
-  var r uint32
+  var x uint32 = 100
+  var y uint32 = 55
+  var result uint32
 
-  r = a(x)
-  fmt.Printf("%032b(%d) -> %032b(%d)\n", x, x, r, r)
+  result = a(x)
+  fmt.Printf("%032b(%d) -> %032b(%d)\n", x, x, result, result)
 
-  r = b(x)
-  fmt.Printf("%032b(%d) -> %032b(%d)\n", x, x, r, r)
+  result = b(x)
+  fmt.Printf("%032b(%d) -> %032b(%d)\n", x, x, result, result)
 
-  r = c(x)
-  fmt.Printf("%032b(%d) -> %032b(%d)\n", x, x, r, r)
+  result = c(x)
+  fmt.Printf("%032b(%d) -> %032b(%d)\n", x, x, result, result)
 
-  r = d(x)
-  fmt.Printf("%032b(%d) -> %032b(%d)\n", x, x, r, r)
+  result = d(x)
+  fmt.Printf("%032b(%d) -> %032b(%d)\n", x, x, result, result)
 
-  r = e(x)
-  fmt.Printf("%032b(%d) -> %032b(%d)\n", x, x, r, r)
+  result = e(x)
+  fmt.Printf("%032b(%d) -> %032b(%d)\n", x, x, result, result)
 
-  r = f(x, y)
-  fmt.Printf("%032b(%d) + %032b(%d) = %032b(%d)\n", x, x, y, y, r, r)
+  result = f(x, y)
+  fmt.Printf("%032b(%d) + %032b(%d) = %032b(%d)\n", x, x, y, y, result, result)
 
-  r = g(x, y)
-  fmt.Printf("%032b(%d) + %032b(%d) = %032b(%d)\n", x, x, y, y, r, r)
+  result = g(x, y)
+  fmt.Printf("%032b(%d) + %032b(%d) = %032b(%d)\n", x, x, y, y, result, result)
 
-  r = h(x, y)
-  fmt.Printf("%032b(%d) + %032b(%d) = %032b(%d)\n", x, x, y, y, r, r)
+  result = h(x, y)
+  fmt.Printf("%032b(%d) + %032b(%d) = %032b(%d)\n", x, x, y, y, result, result)
 
-  r = i(x, y)
-  fmt.Printf("%032b(%d) + %032b(%d) = %032b(%d)\n", x, x, y, y, r, r)
+  result = i(x, y)
+  fmt.Printf("%032b(%d) + %032b(%d) = %032b(%d)\n", x, x, y, y, result, result)
+
+  result = j(x, y)
+  fmt.Printf("%032b(%d) - %032b(%d) = %032b(%d)\n", x, x, y, y, result, result)
+
+  result = k(x, y)
+  fmt.Printf("%032b(%d) - %032b(%d) = %032b(%d)\n", x, x, y, y, result, result)
+
+  result = l(x, y)
+  fmt.Printf("%032b(%d) - %032b(%d) = %032b(%d)\n", x, x, y, y, result, result)
+
+  result = m(x, y)
+  fmt.Printf("%032b(%d) - %032b(%d) = %032b(%d)\n", x, x, y, y, result, result)
+
+  result = n(x, y)
+  fmt.Printf("%032b(%d) ^ %032b(%d) = %032b(%d)\n", x, x, y, y, result, result)
+
+  result = o(x, y)
+  fmt.Printf("%032b(%d) & ^%032b(%d) = %032b(%d)\n", x, x, y, y, result, result)
+
+  result = p(x, y)
+  fmt.Printf("%032b(%d) & ^%032b(%d) = %032b(%d)\n", x, x, y, y, result, result)
+
+  result = q(x, y)
+  fmt.Printf("^(%032b(%d) - %032b(%d)) = %032b(%d)\n", x, x, y, y, result, result)
+
+  result = r(x, y)
+  fmt.Printf("^(%032b(%d) - %032b(%d)) = %032b(%d)\n", x, x, y, y, result, result)
+
+  result = s(x, y)
+  fmt.Printf("^(%032b(%d) ^ %032b(%d)) = %032b(%d)\n", x, x, y, y, result, result)
+
+  result = t(x, y)
+  fmt.Printf("^(%032b(%d) ^ %032b(%d)) = %032b(%d)\n", x, x, y, y, result, result)
+
+  result = u(x, y)
+  fmt.Printf("%032b(%d) | %032b(%d) = %032b(%d)\n", x, x, y, y, result, result)
+
+  result = v(x, y)
+  fmt.Printf("%032b(%d) & %032b(%d) = %032b(%d)\n", x, x, y, y, result, result)
 }
 
 // -x
@@ -79,4 +118,69 @@ func h(x uint32, y uint32) uint32 {
 // x + y
 func i(x uint32, y uint32) uint32 {
   return 2 * (x | y) - (x ^ y)
+}
+
+// x - y
+func j(x uint32, y uint32) uint32 {
+  return x + ^y + 1
+}
+
+// x - y
+func k(x uint32, y uint32) uint32 {
+  return (x ^ y) - 2 * (^x & y)
+}
+
+// x - y
+func l(x uint32, y uint32) uint32 {
+  return (x & ^y) - (^x & y)
+}
+
+// x - y
+func m(x uint32, y uint32) uint32 {
+  return 2 * (x & ^y) - (x ^ y)
+}
+
+// x ^ y
+func n(x uint32, y uint32) uint32 {
+  return (x | y) - (x & y)
+}
+
+// x & ^y
+func o(x uint32, y uint32) uint32 {
+  return (x | y) - y
+}
+
+// x & ^y
+func p(x uint32, y uint32) uint32 {
+  return (x | y) - y
+}
+
+// ^(x - y)
+func q(x uint32, y uint32) uint32 {
+  return y - x - 1
+}
+
+// ^(x - y)
+func r(x uint32, y uint32) uint32 {
+  return ^x + y
+}
+
+// ^(x ^ y)
+func s(x uint32, y uint32) uint32 {
+  return (x & y) - (x | y) - 1
+}
+
+// ^(x ^ y)
+func t(x uint32, y uint32) uint32 {
+  return (x & y) + ^(x | y)
+}
+
+// x | y
+func u(x uint32, y uint32) uint32 {
+  return (x & ^y) + y
+}
+
+// x & y
+func v(x uint32, y uint32) uint32 {
+  return (^x | y) - ^x
 }
